@@ -38,6 +38,9 @@ function App() {
   const deleteScore = useCallback(() => {
     sock.deleteScore();
   }, []);
+  const clear = useCallback(() => {
+    sock.clear();
+  }, []);
   //
   const displayLogin = useMemo(() => {
     return !regObj.alert || (!!regObj.alert && !regObj.isOk);
@@ -119,6 +122,9 @@ function App() {
               <button onDoubleClick={deleteUsers}>Обнулить игроков</button>
               <br />
               <button onDoubleClick={deleteScore}>Обнулить счёт</button>
+              <br />
+              <br />
+              <button onDoubleClick={clear}>!Очистить! </button>
               <br />
               <br />
               Участники:

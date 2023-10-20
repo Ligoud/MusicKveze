@@ -5,7 +5,13 @@
     @include componentCenter(relative,$s2Width,$s2Height);
     
     div{
-        user-select: 'none';
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        outline: 0;
         position: absolute;
         height: 100%;
         width: 100%;

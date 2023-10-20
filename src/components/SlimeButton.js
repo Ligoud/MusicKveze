@@ -18,13 +18,16 @@ const ButtonStyle2: React.FC = ({ onClick, disabled }) => {
   console.log(`fl1 ${disabled ? "dis" : ""}`);
   return (
     <div
-      className="buttonStyle2"
+      className="buttonStyle2 disableSelect"
       onClick={() => {
         console.log("clicked");
         onClick();
       }}
     >
-      <div className={`fl1 ${disabled ? "dis" : ""} disableSelect`}></div>
+      <div
+        className={`fl1 ${disabled ? "dis" : ""} disableSelect`}
+ 
+      ></div>
       {/* <div className='fl2'></div> */}
       <span style={{ color: "white" }} className="disableSelect">
         Answer

@@ -52,4 +52,7 @@ export default class OwnSocket {
   deleteScore() {
     connection.send(JSON.stringify({ type: "deletescore" }));
   }
+  clear() {
+    connection.send(JSON.stringify({ type: "clear" }));
+  }
 }
