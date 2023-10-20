@@ -5,6 +5,7 @@
     @include componentCenter(relative,$s2Width,$s2Height);
     
     div{
+        user-select: 'none';
         position: absolute;
         height: 100%;
         width: 100%;

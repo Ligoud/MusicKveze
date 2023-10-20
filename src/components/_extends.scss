@@ -24,6 +24,10 @@
         display: none;
     }            
 }
+.disableSelect{
+    -webkit-user-select: none; /* Safari */
+    user-select: none;
+}
 
 %randomMusicBar{
     @for $i from 1 through 100 {

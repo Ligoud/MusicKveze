@@ -134,9 +134,11 @@ function App() {
                 transform: "translate(-50%,-50%)",
                 width: "300px",
                 height: "300px",
+                userSelect: "none",
+                WebkitUserSelect: "none",
               }}
             >
-              <SlimeButton onClick={onAnswer} disabled={isBlocked}/>
+              <SlimeButton onClick={onAnswer} disabled={isBlocked} />
               {/* <button onClick={onAnswer} disabled={isBlocked}>
                 Ответить
               </button> */}
