@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/MusicKveze/static/css/main.79b06c7d.css",
-    "main.js": "/MusicKveze/static/js/main.120dc472.js",
+    "main.css": "/MusicKveze/static/css/main.c768cbfe.css",
+    "main.js": "/MusicKveze/static/js/main.8b6d8597.js",
     "static/js/787.c1b3a731.chunk.js": "/MusicKveze/static/js/787.c1b3a731.chunk.js",
     "index.html": "/MusicKveze/index.html",
-    "main.79b06c7d.css.map": "/MusicKveze/static/css/main.79b06c7d.css.map",
-    "main.120dc472.js.map": "/MusicKveze/static/js/main.120dc472.js.map",
+    "main.c768cbfe.css.map": "/MusicKveze/static/css/main.c768cbfe.css.map",
+    "main.8b6d8597.js.map": "/MusicKveze/static/js/main.8b6d8597.js.map",
     "787.c1b3a731.chunk.js.map": "/MusicKveze/static/js/787.c1b3a731.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.79b06c7d.css",
-    "static/js/main.120dc472.js"
+    "static/css/main.c768cbfe.css",
+    "static/js/main.8b6d8597.js"
   ]
 }
