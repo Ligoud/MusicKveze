@@ -1,4 +1,5 @@
-const connection = new WebSocket("ws://localhost:8080");
+const connection = new WebSocket("ws:/localhost:8080");
+// const connection = new WebSocket("wss://musickveze-y9bt6thg.b4a.run/");
 connection.onopen = () => {
   console.log("connected");
 };
@@ -16,6 +17,7 @@ export default class OwnSocket {
           });
           break;
         case "answer":
+          console.log(resData);
           setBlocked(resData.isBlocked);
           setAnswerUser(resData.answerUser);
           break;
@@ -46,5 +48,8 @@ export default class OwnSocket {
   }
   deleteAll() {
     connection.send(JSON.stringify({ type: "deleteAll" }));
+  }
+  deleteScore() {
+    connection.send(JSON.stringify({ type: "deletescore" }));
   }
 }

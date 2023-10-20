@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import socket from "./logic/socket";
+import SlimeButton from "./components/SlimeButton";
 const sock = new socket();
+
 function App() {
   //
   const [regObj, setRegObj] = useState({
@@ -10,7 +12,7 @@ function App() {
   //
 
   const [name, setName] = useState("");
-  const [isBlocked, setIsBlocked] = useState(false);
+  const [isBlocked, setIsBlocked] = useState(true);
   const [asnwerUser, setAnswerUser] = useState("");
   const [score, setScore] = useState({});
 
@@ -27,11 +29,14 @@ function App() {
   const setAnswer = useCallback((isBlck) => {
     sock.setBlock(isBlck);
   }, []);
-  const deleteUsers = useCallback((isBlck) => {
+  const deleteUsers = useCallback(() => {
     sock.deleteAll();
   }, []);
   const addScore = useCallback((sc) => {
     sock.addScore(sc);
+  }, []);
+  const deleteScore = useCallback(() => {
+    sock.deleteScore();
   }, []);
   //
   const displayLogin = useMemo(() => {
@@ -64,7 +69,22 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div
+      style={
+        name == "admin" && !displayLogin
+          ? {}
+          : {
+              position: "absolute",
+              width: "100vw",
+              height: "100vh",
+              // background: "rgb(145, 227, 210)",
+              background:
+                "radial-gradient(circle, rgba(145,227,210,1) 0%, rgba(66,64,131,1) 100%)",
+              margin: 0,
+              padding: 0,
+            }
+      }
+    >
       {displayLogin && (
         <>
           <input onChange={nameChange} value={name} />
@@ -75,14 +95,15 @@ function App() {
       )}
       {!displayLogin && (
         <>
-          {name}
           <br />
           {name === "admin" ? (
             <>
               Отвечает: {asnwerUser || " - "}
               {asnwerUser && (
                 <>
+                  <br />
                   <button onClick={() => addScore(1)}>Верно</button>
+                  <br />
                   <button onClick={() => addScore(0)}>Неверно</button>
                 </>
               )}
@@ -93,7 +114,11 @@ function App() {
               <br />
               <button onClick={() => setAnswer(false)}>Разблокировать</button>
               <br />
+              =============================================
+              <br />
               <button onDoubleClick={deleteUsers}>Обнулить игроков</button>
+              <br />
+              <button onDoubleClick={deleteScore}>Обнулить счёт</button>
               <br />
               <br />
               Участники:
@@ -101,9 +126,21 @@ function App() {
               {displayScore}
             </>
           ) : (
-            <button onClick={onAnswer} disabled={isBlocked}>
-              Ответить
-            </button>
+            <div
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%,-50%)",
+                width: "300px",
+                height: "300px",
+              }}
+            >
+              <SlimeButton onClick={onAnswer} disabled={isBlocked}/>
+              {/* <button onClick={onAnswer} disabled={isBlocked}>
+                Ответить
+              </button> */}
+            </div>
           )}
         </>
       )}

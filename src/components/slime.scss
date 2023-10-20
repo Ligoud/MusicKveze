@@ -1,0 +1,102 @@
+@import './extends';
+@import './variables';
+
+.buttonStyle2{
+    @include componentCenter(relative,$s2Width,$s2Height);
+    
+    div{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        // border-radius: 50%;
+        // border: 1px solid black;
+        cursor: pointer;
+        //border: 1px solid black;    
+        //
+        &.fl1{
+
+            @include componentCenter('absolute',100%,100%);
+            
+            z-index: 2;
+            animation: fluidButton1 3s linear 0s infinite;    
+            animation-play-state: running;                
+            animation-direction: alternate;
+                     
+            background: linear-gradient(to top right,#12CBC4,#0652DD,#a55eea,#be2edd,#ff7979,#f9ca24 );
+            background-size: 300% 100%;   
+
+            background-position: 0% ; 
+            
+            @include borderRadius(50%, 50%, 50%, 50%, 50%, 50%, 50%, 50%);  
+            &.dis{
+                animation-play-state: paused;
+                background: linear-gradient(to top right,#12cbc581,#0651dd77,#a45eea79,#bd2edd69,#ff797967,#f9cb2473 );
+            }
+        }
+
+    }
+    &:hover div{
+        &.fl1{
+            &.dis{
+                animation-play-state: paused;                
+            }        
+        }        
+    }
+    span{
+        z-index: 3;
+        @include componentCenter(absolute);
+        user-select: none;
+        cursor: pointer;
+    }
+    
+}
+//Подправить тут. Раньше времени приходят и стоят
+@keyframes fluidButton1 {
+    
+    14%{        
+        @include borderRadius(90%, 80%, 70%, 90%, 80%, 60%, 76%, 85%);
+        background-position: 14% ; 
+    }    
+    40%{
+        @include borderRadius(70%, 80%, 96%, 66%, 50%, 70%, 80%, 90%);        
+  
+        background-position: 40%;
+    }
+    60%{
+        @include borderRadius(67%, 73%, 88%, 99%, 81%, 65%, 87%, 72%);
+
+        background-position: 60%;
+    }
+    85%{
+        @include borderRadius(81%, 95%, 87%, 72%, 67%, 73%, 88%, 79%);  
+
+        background-position: 85%;      
+    }
+    100%{
+
+        background-position: 100%;
+    }
+}
+@keyframes fluidButton2 {
+    
+    14%{        
+        @include borderRadius(50%, 40%, 30%, 20%, 30%, 10%, 36%, 25%);
+        background-position: 14% ; 
+    }    
+    40%{
+        @include borderRadius(30%, 10%, 26%, 25%, 50%, 40%, 30%, 15%);
+        background-position: 40%;
+    }
+    60%{
+        @include borderRadius(47%, 23%, 48%, 39%, 11%, 25%, 47%, 32%);
+        background-position: 60%;
+    }
+    85%{
+        @include borderRadius(21%, 25%, 37%, 42%, 29%, 13%, 48%, 39%);
+        background-position: 85%;      
+    }
+    100%{
+        background-position: 100%;
+    }
+}
+//Добавить еще несколько на фоне пузырей
