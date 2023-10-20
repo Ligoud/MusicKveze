@@ -1,5 +1,5 @@
-const connection = new WebSocket("ws:/localhost:8080");
-// const connection = new WebSocket("wss://musickveze-y9bt6thg.b4a.run/");
+// const connection = new WebSocket("ws:/localhost:8080");
+const connection = new WebSocket("wss://musickveze-y9bt6thg.b4a.run/");
 connection.onopen = () => {
   console.log("connected");
 };
