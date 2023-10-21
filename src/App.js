@@ -105,7 +105,9 @@ function App() {
               {asnwerUser && (
                 <>
                   <br />
-                  <button onClick={() => addScore(1)}>Верно</button>
+                  <button onClick={() => addScore(1)}>+ 1 Балл</button>
+                  <br />
+                  <button onClick={() => addScore(2)}>+ 2 Балла</button>
                   <br />
                   <button onClick={() => addScore(0)}>Неверно</button>
                 </>
